@@ -63,7 +63,7 @@ git clone https://github.com/sujeetamberkar/version3.git
 2. Navigate to the project directory:
 
 ```
-    cd version3
+    cd it_Project_Dashboard
 ```
 3. Activate the virtual environment:
 - a) On macOS and Linux:
