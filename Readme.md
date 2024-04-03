@@ -16,11 +16,13 @@ A superuser account is available for administrative access:
 The application has two main groups, each with test users:
 
 #### Teachers
-- Username: `test_teacher`
-- Password: `teacher@1234`
+1. Teacher 1
+   - Username: `test_teacher`
+   - Password: `teacher@1234`
 
-- Username: `teachernext`
-- Password: `teacher@1234`
+2. Teacher 2
+   - Username: `teachernext`
+   - Password: `teacher@1234`
 
 #### Students
 1. Raj
