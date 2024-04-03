@@ -19,6 +19,9 @@ The application has two main groups, each with test users:
 - Username: `test_teacher`
 - Password: `teacher@1234`
 
+- Username: `teachernext`
+- Password: `teacher@1234`
+
 #### Students
 1. Raj
    - Username: `raj`
@@ -27,6 +30,18 @@ The application has two main groups, each with test users:
 2. Abhi
    - Username: `abhi`
    - Password: `abhi@1234`
+
+3. Manali
+   - Username: `manali`
+   - Password: `sanmansuj`
+
+3. Sanjay
+   - Username: `sanjay`
+   - Password: `sanmansuj`
+
+3. Sarita
+   - Username: `sarita`
+   - Password: `sanmansuj`
 
 ### Prerequisites
 
