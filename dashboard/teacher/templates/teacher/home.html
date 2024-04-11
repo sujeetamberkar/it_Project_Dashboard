@@ -10,38 +10,42 @@
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
     <style>
         body {
-            background-color: #f8f9fa; /* Bootstrap's gray-100 for a light background */
-        }
-        .home-container {
-            padding: 20px;
-            background-color: #fff; /* White background */
-            border-radius: 5px;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
-            max-width: 600px;
-            margin: 100px auto; /* Center in the middle of the page */
-        }
-        .btn-custom {
-            background-color: #495057; /* Bootstrap's gray-600 */
-            color: white;
-            width: 100%; /* Full width for the button */
-            margin-top: 10px; /* Space above the button */
-        }
-        .btn-custom:hover {
-            background-color: #343a40; /* Bootstrap's gray-800 for a slight hover effect */
-        }
-        .welcome-heading {
-            margin-bottom: 30px; /* Space below the heading */
-            text-align: center;
-        }
-        .back-link {
-            display: block;
-            text-align: center;
-            margin-top: 20px; /* Space above the back link */
-        }
-    </style>
+
+background-color: #f8f9fa; /* Bootstrap's gray-100 for a light background */
+}
+.container {
+    display: flex; /* Enables Flexbox */
+    flex-direction: column; /* Stacks items vertically */
+    justify-content: center; /* Centers content horizontally */
+    align-items: center; /* Centers content vertically */
+    min-height: 100vh; /* Minimum height of 100% of the viewport height */
+    padding: 0; /* No padding */
+    background-color: #fff; /* White background */
+
+}
+.d-grid {
+    display: flex; /* Enables Flexbox */
+    flex-direction: row; /* Lines items up in a row */
+    flex-wrap: wrap; /* Allows items to wrap onto multiple lines */
+    justify-content: center; /* Centers buttons horizontally */
+    gap: 10px; /* Space between buttons */
+}
+.btn-custom {
+    background-color: #495057; /* Bootstrap's gray-600 */
+    color: white;
+    flex: 1; /* Each button will grow equally to fill the space */
+    min-width: 100px; /* Minimum width for buttons, adjust as needed */
+}
+.back-link {
+    width: 100%; /* Makes the back link take the full width */
+    text-align: center;
+    margin-top: 20px; /* Space above the back link */
+}
+
+</style>
 </head>
 <body>
-    <div class="home-container">
+    <div class="container home-container">
         {% if user.is_authenticated %}
             <h1 class="welcome-heading">Welcome, {{ user.username }}!</h1>
             <div class="d-grid gap-2">
