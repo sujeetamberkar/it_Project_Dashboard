@@ -9,6 +9,28 @@
     <title>Student Login</title>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
     <style>
+        body {
+            background-color: #f8f9fa; /* White background */
+        }
+        .container {
+            display: flex; /* Enables Flexbox */
+            justify-content: center; /* Centers content horizontally */
+            align-items: center; /* Centers content vertically */
+            min-height: 100vh; /* Minimum height of 100% of the viewport height */
+            padding: 0; /* No padding */
+        }
+        .login-container {
+            padding: 20px;
+            background-color: #fff; /* Bootstrap's gray-100 */
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+        }
+        .form-control {
+            margin-bottom: 10px; /* Space below form fields */
+        }
+        .form-group {
+            margin-bottom: 20px; /* More space between form groups */
+        }
         .btn-custom {
             background-color: #495057; /* Bootstrap's gray-600 */
             color: white;
@@ -17,29 +39,13 @@
         .btn-custom:hover {
             background-color: #343a40; /* Bootstrap's gray-800 for a slight hover effect */
         }
-        .container {
-            max-width: 960px; /* A standard width for medium-large screens */
-            margin-top: 100px; /* More space at the top */
-        }
-        .form-control {
-            margin-bottom: 10px; /* Space below form fields */
-        }
-        .form-group {
-            margin-bottom: 20px; /* More space between form groups */
-        }
-        .login-container {
-            padding: 20px;
-            background-color: #f8f9fa; /* Bootstrap's gray-100 */
-            border-radius: 5px;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
-        }
         .back-link {
             display: block;
             text-align: center;
             margin-top: 15px; /* Space above the back link */
         }
     </style>
-</head>
+    </head>
 <body>
     <div class="container login-container">
         <div class="row">

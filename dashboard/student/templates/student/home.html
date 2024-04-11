@@ -6,29 +6,40 @@
     <title>Home Page</title>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
     <style>
-        .btn-custom {
-            background-color: #495057; /* Bootstrap's gray-600 */
-            color: white;
-            margin-right: 10px; /* Add space to the right of buttons */
-        }
-        /* Optional: adjust the spacing as per your design needs */
-        .btn-custom:not(:last-child) {
-            margin-bottom: 10px; /* Space between buttons when wrapped */
-        }
-        .btn-custom:hover {
-            background-color: #343a40; /* Bootstrap's gray-800 for a slight hover effect */
+        html, body {
+            height: 100%; /* Full height */
+            margin: 0; /* Reset margin */
+            display: flex; /* Use flexbox */
+            justify-content: center; /* Center horizontally */
+            align-items: center; /* Center vertically */
+            background-color: #f8f9fa; /* Background color */
         }
         .container {
-            max-width: 960px; /* A standard width for medium-large screens */
+            display: flex; /* Use flexbox */
+            flex-direction: column; /* Stack children vertically */
+            justify-content: center; /* Center children vertically */
+            align-items: center; /* Center children horizontally */
+            width: 100vw; /* Full width */
+            height: 100%; /* Full height */
+            padding: 2rem; /* Padding */
+            background-color: #fff; /* Background color for the content area */
+            box-shadow: 0 .5rem 1rem rgba(0, 0, 0, .15); /* Shadow for depth */
+            border-radius: .5rem; /* Rounded corners */
+            margin: auto; /* Auto margins for centering horizontally */
         }
-        /* Optional: for a full-width grey background */
-        body {
-            background-color: #f8f9fa; /* Bootstrap's gray-100 for a light background */
+        .btn-custom {
+            background-color: #495057; /* Button color */
+            color: white; /* Text color */
+            margin-bottom: 10px; /* Space between buttons */
+        }
+        .btn-custom:hover {
+            background-color: #343a40; /* Hover effect */
         }
         .welcome {
             margin-bottom: 20px; /* Space below the welcome message */
         }
     </style>
+
 </head>
 <body>
     <div class="container mt-5 p-3 bg-white shadow-sm rounded">

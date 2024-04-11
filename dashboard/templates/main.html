@@ -13,12 +13,17 @@
             background-color: #f8f9fa; /* Bootstrap's gray-100 for a light background */
         }
         .main-container {
-            padding: 20px;
-            background-color: #fff; /* White background */
-            border-radius: 5px;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
-            margin-top: 100px; /* More space at the top */
-        }
+    display: flex; /* Enables Flexbox */
+    justify-content: center; /* Centers content horizontally */
+    align-items: center; /* Centers content vertically */
+    flex-direction: column; /* Stacks items vertically */
+    min-height: 100vh; /* Minimum height of 100% of the viewport height */
+    padding: 20px;
+    background-color: #fff; /* White background */
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+}
+
         .btn-custom {
             background-color: #495057; /* Bootstrap's gray-600 */
             color: white;
@@ -38,6 +43,7 @@
                 margin-right: 10px; /* Space to the right of the button */
             }
         }
+
     </style>
 </head>
 <body>
@@ -46,7 +52,6 @@
     <h1 class="text-center welcome-heading">Welcome to the Dashboard</h1>
     <div class="d-grid gap-2 d-sm-flex justify-content-sm-center">
         <a href="/student/login/" class="btn btn-custom">Login as Student</a>
-        
         <a href="/teacher/login/" class="btn btn-custom">Login as Teacher</a>
     </div>
 </div>
