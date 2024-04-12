@@ -1,101 +1,192 @@
-{% load static %}
-{% load youtube_filters %}
+{% load static %} {% load youtube_filters %}
 <html lang="en">
-<head>
+  <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Student Dashboard</title>
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+    />
     <style>
-        html, body {
-            height: 100%; /* Full height */
-            margin: 0; /* Reset margin */
-            font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif; /* Modern font */
-            background-color: #f4f4f4; /* Soft gray background */
-            color: #333; /* Dark gray text for better readability */
-        }
-        .main_container {
-            height: 100%;
-            width: 100%;
-            display: flex;
-            flex-direction: row;
-        }
-        .sub_container {
-            display: flex;
-            flex-direction: column;
-            height: 100%;
-            width: 50%;
-            background: #fff; /* White background for the content areas */
-            border-right: 2px solid #e0e0e0; /* Subtle border for separation */
-        }
-        .Quadrant_One, .Quadrant_Two, .Quadrant_Three, .Quadrant_Four {
-            padding: 20px; /* Padding for content */
-            overflow-y: auto; /* Allows scrolling */
-        }
-        .Quadrant_One {
-            background-color: #333; /* Dark background for the header */
-            color: #fff; /* White text for contrast */
-            font-size: 1.2rem; /* Larger font size for welcome message */
-        }
-        .Quadrant_Three, .Quadrant_Two, .Quadrant_Four {
-            background-color: #fff; /* Maintain white background for content */
-        }
-        h4 {
-            color: #333; /* Dark gray for headings */
-            margin-top: 10px; /* Space above headings */
-        }
-        a {
-            color: #007bff; /* Bootstrap primary blue for links */
-        }
-        .back-button {
-            margin-top: 20px; /* Space from the content above */
-            width: 100%; /* Full width of the container */
-            background-color: #333; /* Dark background for the button */
-            color: white; /* White text for the button */
-        }
+      html,
+      body {
+        height: 100%; /* Full height */
+        margin: 0; /* Reset margin */
+        font-family: "Helvetica Neue", Helvetica, Arial, sans-serif; /* Modern font */
+        background-color: #f4f4f4; /* Soft gray background */
+        color: #333; /* Dark gray text for better readability */
+      }
+      .main_container {
+        height: 100%;
+        width: 100%;
+        display: flex;
+        flex-direction: row;
+      }
+      .sub_container {
+        display: flex;
+        flex-direction: column;
+        height: 100%;
+        width: 50%;
+        background: #fff; /* White background for the content areas */
+        border-right: 2px solid #e0e0e0; /* Subtle border for separation */
+      }
+      .Quadrant_One,
+      .Quadrant_Two,
+      .Quadrant_Three,
+      .Quadrant_Four {
+        padding: 20px; /* Padding for content */
+        overflow-y: auto; /* Allows scrolling */
+      }
+      .Quadrant_One {
+        background-color: #333; /* Dark background for the header */
+        color: #fff; /* White text for contrast */
+        font-size: 1.2rem; /* Larger font size for welcome message */
+      }
+      .Quadrant_Three {
+    background-color: #2c2c2c; /* Dark grey background */
+    color: #ffffff; /* White text color for contrast */
+    padding: 20px; /* Padding for content */
+    overflow-y: auto; /* Allows scrolling */
+}
+
+.Quadrant_Three h4 {
+    color: #ffcc00; /* Bright yellow for headers to stand out */
+    margin-top: 10px; /* Space above headers */
+    margin-bottom: 5px; /* Space below headers */
+}
+
+.Quadrant_Three iframe {
+    border-radius: 5px; /* Rounded corners for the iframe */
+    margin-bottom: 10px; /* Space below the video */
+}
+
+.Quadrant_Three a {
+    display: block; /* Make the link take the full width of its container */
+    text-align: center; /* Center the text inside the link/button */
+    background-color: #333; /* Dark background for the button */
+    color: white; /* White text for the button */
+    padding: 10px; /* Padding inside the button */
+    margin-top: 10px; /* Space above the button */
+    border-radius: 5px; /* Rounded corners for the button */
+    border: none; /* Remove any default border */
+}
+      h4 {
+        color: #333; /* Dark gray for headings */
+        margin-top: 10px; /* Space above headings */
+      }
+      a {
+        color: #007bff; /* Bootstrap primary blue for links */
+      }
+      .back-button {
+        background-color: #333; /* Dark background for the button */
+        color: white; /* White text for the button */
+        border: none; /* Remove any default border */
+        margin-top: 3px; /* Space from the content above */
+        width: 100%; /* Full width of the container */
+        padding: 10px; /* Padding inside the button */
+        border-radius: 5px; /* Rounded corners for the button */
+        text-align: center; /* Center the text inside the button */
+      }
+      .Quadrant_Four {
+        background-color: #2c2c2c; /* Dark grey background */
+        color: #ffffff; /* White text color for contrast */
+        padding: 20px; /* Padding for content */
+        overflow-y: auto; /* Allows scrolling */
+        height: 43%;
+      }
+
+      .Quadrant_Four h1 {
+        color: #ffcc00; /* Bright color for headers to stand out */
+        border-bottom: 1px solid #ffcc00; /* Underline for the header */
+        padding-bottom: 10px; /* Space below the header */
+      }
+
+      .Quadrant_Four p {
+        margin-top: 10px; /* Space between paragraphs */
+        background-color: #3a3a3a; /* Slightly lighter gray for paragraph backgrounds */
+        padding: 10px; /* Padding inside each paragraph */
+        border-radius: 5px; /* Rounded corners for paragraphs */
+      }
+
+      .Quadrant_Two {
+        background-color: #2c2c2c; /* Dark grey background */
+        color: #ffffff; /* White text color for contrast */
+        border-bottom: 1px solid #444; /* Slight border for separating items */
+        overflow-y: auto; /* Allows scrolling */
+        padding: 20px; /* Padding for content */
+        height: 57%;
+
+      }
+
+      .Quadrant_Two h1 {
+        color: #ffcc00; /* Bright color for headers to stand out */
+        border-bottom: 1px solid #ffcc00; /* Underline for the header */
+        padding-bottom: 10px; /* Space below the header */
+      }
+
+      .Quadrant_Two div {
+        margin-top: 10px; /* Space between entries */
+        padding: 10px; /* Padding inside each notice entry */
+        background-color: #3a3a3a; /* Slightly lighter gray for each notice box */
+        border-radius: 5px; /* Rounded corners for the notice boxes */
+      }
     </style>
-</head>
-<body>
+  </head>
+  <body>
     <div class="main_container">
-        <div class="sub_container Left_Sub">
-            <div class="Quadrant_One">
-                <p>Welcome, {{ user.username }}!</p>
-            </div>
-            <div class="Quadrant_Three">
-                {% for material in materials %}
-                    <div>
-                        <h4>{{ material.chapter_name }}</h4>
-                        <iframe src="https://www.youtube.com/embed/{{ material.video_url|youtube_id }}" frameborder="0" allowfullscreen style="width:100%; height:300px;"></iframe>
-                        <a href="{{ material.pdf_file.url }}" class="btn btn-secondary back-button" download>Download PDF</a>
-                    </div>
-                {% endfor %}
-            </div>
+      <div class="sub_container Left_Sub">
+        <div class="Quadrant_One">
+          <p>Welcome, {{ user.username }}!</p>
         </div>
-        <div class="sub_container Right_Sub" style="border-right: none;"> <!-- Remove border for the last sub-container -->
-            <div class="Quadrant_Two">
-                <h1>Notice</h1>
-                {% for notice in notices %}
-                    <div>
-                        <p>{{ notice.created_at|date:"Y-m-d H:i" }} - {{ notice.content }}</p>
-                    </div>
-                {% endfor %}
-            </div>
-            <div class="Quadrant_Four">
-                <h1>Your Marks</h1>
-                {% if marks_instance %}
-                    <p>Marks Obtained: {{ marks_instance.marks_obtained }}</p>
-                    <p>Total Marks: {{ marks_instance.total_marks }}</p>
-                    <p>Percentage: {{ percentage|floatformat:2 }}%</p>
-                {% else %}
-                    <p>No marks recorded.</p>
-                {% endif %}
-                <!-- Go Back Button -->
-                <a href="/" class="btn btn-secondary back-button">Go Back</a>
-            </div>
+        <div class="Quadrant_Three">
+          {% for material in materials %}
+          <div>
+            <h4>{{ material.chapter_name }}</h4>
+            <iframe
+              src="https://www.youtube.com/embed/{{ material.video_url|youtube_id }}"
+              frameborder="0"
+              allowfullscreen
+              style="width: 100%; height: 300px"
+            ></iframe>
+            <a
+              href="{{ material.pdf_file.url }}"
+              class="btn btn-secondary back-button"
+              download
+              >Download PDF</a
+            >
+          </div>
+          {% endfor %}
         </div>
+      </div>
+      <div class="sub_container Right_Sub" style="border-right: none">
+        <!-- Remove border for the last sub-container -->
+        <div class="Quadrant_Two">
+          <h1>Notice</h1>
+          {% for notice in notices %}
+          <div>
+            <p>
+              {{ notice.created_at|date:"Y-m-d H:i" }} - {{ notice.content }}
+            </p>
+          </div>
+          {% endfor %}
+        </div>
+        <div class="Quadrant_Four">
+          <h1>Your Marks</h1>
+          {% if marks_instance %}
+          <p>Marks Obtained: {{ marks_instance.marks_obtained }}</p>
+          <p>Total Marks: {{ marks_instance.total_marks }}</p>
+          <p>Percentage: {{ percentage|floatformat:2 }}%</p>
+          {% else %}
+          <p>No marks recorded.</p>
+          {% endif %}
+          <!-- Go Back Button -->
+          <a href="/" class="btn btn-secondary back-button">Go Back</a>
+        </div>
+      </div>
     </div>
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.2/dist/umd/popper.min.js"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
-</body>
+  </body>
 </html>
