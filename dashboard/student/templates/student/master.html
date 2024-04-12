@@ -10,6 +10,9 @@
         html, body {
             height: 100%; /* Full height */
             margin: 0; /* Reset margin */
+            font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif; /* Modern font */
+            background-color: #f4f4f4; /* Soft gray background */
+            color: #333; /* Dark gray text for better readability */
         }
         .main_container {
             height: 100%;
@@ -22,29 +25,33 @@
             flex-direction: column;
             height: 100%;
             width: 50%;
+            background: #fff; /* White background for the content areas */
+            border-right: 2px solid #e0e0e0; /* Subtle border for separation */
+        }
+        .Quadrant_One, .Quadrant_Two, .Quadrant_Three, .Quadrant_Four {
+            padding: 20px; /* Padding for content */
+            overflow-y: auto; /* Allows scrolling */
         }
         .Quadrant_One {
-            height: 10%;
-            width: 100%;
+            background-color: #333; /* Dark background for the header */
+            color: #fff; /* White text for contrast */
+            font-size: 1.2rem; /* Larger font size for welcome message */
         }
-        .Quadrant_Three {
-            height: 90%;
-            width: 100%;
-            overflow-y: auto;
+        .Quadrant_Three, .Quadrant_Two, .Quadrant_Four {
+            background-color: #fff; /* Maintain white background for content */
         }
-        .Quadrant_Two {
-            height: 50%;
-            width: 100%;
-            overflow-y: auto;
+        h4 {
+            color: #333; /* Dark gray for headings */
+            margin-top: 10px; /* Space above headings */
         }
-        .Quadrant_Four {
-            height: 50%;
-            width: 100%;
-            overflow-y: auto;
+        a {
+            color: #007bff; /* Bootstrap primary blue for links */
         }
         .back-button {
             margin-top: 20px; /* Space from the content above */
             width: 100%; /* Full width of the container */
+            background-color: #333; /* Dark background for the button */
+            color: white; /* White text for the button */
         }
     </style>
 </head>
@@ -58,14 +65,15 @@
                 {% for material in materials %}
                     <div>
                         <h4>{{ material.chapter_name }}</h4>
-                        <iframe src="https://www.youtube.com/embed/{{ material.video_url|youtube_id }}" frameborder="0" allowfullscreen></iframe>
-                        <a href="{{ material.pdf_file.url }}" download>Download PDF</a>
+                        <iframe src="https://www.youtube.com/embed/{{ material.video_url|youtube_id }}" frameborder="0" allowfullscreen style="width:100%; height:300px;"></iframe>
+                        <a href="{{ material.pdf_file.url }}" class="btn btn-secondary back-button" download>Download PDF</a>
                     </div>
                 {% endfor %}
             </div>
         </div>
-        <div class="sub_container Right_Sub">
+        <div class="sub_container Right_Sub" style="border-right: none;"> <!-- Remove border for the last sub-container -->
             <div class="Quadrant_Two">
+                <h1>Notice</h1>
                 {% for notice in notices %}
                     <div>
                         <p>{{ notice.created_at|date:"Y-m-d H:i" }} - {{ notice.content }}</p>
@@ -73,6 +81,7 @@
                 {% endfor %}
             </div>
             <div class="Quadrant_Four">
+                <h1>Your Marks</h1>
                 {% if marks_instance %}
                     <p>Marks Obtained: {{ marks_instance.marks_obtained }}</p>
                     <p>Total Marks: {{ marks_instance.total_marks }}</p>
