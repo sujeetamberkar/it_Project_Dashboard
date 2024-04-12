@@ -24,7 +24,9 @@ def student_login(request):
             # Check if authenticated user belongs to the 'students' group
             if user is not None and user.groups.filter(name='students').exists():
                 login(request, user)
-                return redirect('home')  # Redirect to the student's home page
+                return redirect('master')  # Redirect to the student's home page
+                # return redirect('home')  # Redirect to the student's home page
+            
             else:
                 # If user is not authenticated or not part of the 'students' group
                 # Consider adding a message to indicate login failure or unauthorized access
