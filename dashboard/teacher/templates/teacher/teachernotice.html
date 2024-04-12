@@ -9,41 +9,72 @@
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
     <style>
-        body {
-            background-color: #f8f9fa; /* Bootstrap's gray-100 for a light background */
-        }
-        .notice-container {
-            padding: 20px;
-            background-color: #fff; /* White background */
-            border-radius: 5px;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
-            max-width: 700px;
-            margin: 50px auto; /* Center in the middle of the page */
-        }
-        .btn-custom {
-            background-color: #495057; /* Bootstrap's gray-600 */
-            color: white;
-            margin-top: 20px; /* Space above the button */
-        }
-        .btn-custom:hover {
-            background-color: #343a40; /* Bootstrap's gray-800 for a slight hover effect */
-        }
-        .form-control {
-            margin-bottom: 20px; /* Space below the textarea */
-        }
-        .back-link {
-            display: block;
-            text-align: center;
-            margin-top: 20px; /* Space above the back link */
-        }
-        textarea {
-            width: 100%; /* Full width */
-            resize: vertical; /* Allow only vertical resizing */
-        }
+body {
+    background-color: #333; /* Dark gray background for the whole page */
+    color: #fff; /* White text color for contrast */
+    font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif; /* Modern font */
+}
+
+.notice-container {
+    padding: 20px;
+    background-color: #424242; /* Darker gray for the notice container */
+    border-radius: 5px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.3); /* Enhanced shadow for more depth */
+    max-width: 700px;
+    margin: 50px auto; /* Center in the middle of the page */
+    color: #fff; /* Ensures text inside the container is white */
+}
+
+.btn-custom {
+    background-color: #495057; /* Bootstrap's gray-600 */
+    color: white;
+    margin-top: 20px; /* Space above the button */
+    border: none; /* Removes the default border */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.5); /* Adds depth to the button */
+}
+
+.btn-custom:hover {
+    background-color: #343a40; /* Bootstrap's gray-800 for a slight hover effect */
+}
+
+.form-control {
+    background-color: #333; /* Dark background for textarea */
+    color: #fff; /* White text for contrast */
+    border: 1px solid #555; /* Subtle border for inputs */
+    margin-bottom: 20px; /* Space below the textarea */
+}
+
+.back-link {
+    color: #ccc; /* Light gray for the back link, ensures visibility */
+    text-decoration: none;
+    text-align: center;
+    display: block;
+    margin-top: 20px; /* Space above the back link */
+}
+
+.back-link:hover {
+    color: #fff; /* White on hover */
+    text-decoration: underline;
+}
+
+textarea {
+    width: 100%; /* Full width */
+    resize: vertical; /* Allow only vertical resizing */
+}
+.welcome-heading {
+    color: #ffcc00; /* Bright yellow for the welcome heading */
+    margin-bottom: 30px;
+    font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif; /* Modern font */
+    font-size: x-large;
+}
+
     </style>
 </head>
 <body>
     <div class="notice-container">
+        <div class="welcome-heading">
+            Upload Notice
+        </div>
         <form method="post">
             {% csrf_token %}
             <div class="form-group">

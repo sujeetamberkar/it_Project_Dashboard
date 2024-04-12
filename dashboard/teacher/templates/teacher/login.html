@@ -6,45 +6,69 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Login</title>
+    <title>Teacher Login</title>
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
     <style>
-        body {
-            background-color: #f8f9fa; /* White background */
-        }
-        .container {
-            display: flex; /* Enables Flexbox */
-            justify-content: center; /* Centers content horizontally */
-            align-items: center; /* Centers content vertically */
-            min-height: 100vh; /* Minimum height of 100% of the viewport height */
-            padding: 0; /* No padding */
-        }
-        .login-container {
-            padding: 20px;
-            background-color: #fff; /* Bootstrap's gray-100 */
-            border-radius: 5px;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
-        }
-        .form-control {
-            margin-bottom: 10px; /* Space below form fields */
-        }
-        .form-group {
-            margin-bottom: 20px; /* More space between form groups */
-        }
-        .btn-custom {
-            background-color: #495057; /* Bootstrap's gray-600 */
-            color: white;
-            margin-top: 10px; /* Space above the button */
-        }
-        .btn-custom:hover {
-            background-color: #343a40; /* Bootstrap's gray-800 for a slight hover effect */
-        }
-        .back-link {
-            display: block;
-            text-align: center;
-            margin-top: 15px; /* Space above the back link */
-        }
+body {
+    background-color: #333; /* Dark gray background for the whole page */
+    color: #fff; /* White text color for contrast */
+    font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif; /* Modern font */
+}
+
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh; /* Full viewport height */
+    padding: 0;
+}
+
+.login-container {
+    padding: 20px;
+    background-color: #424242; /* Darker gray for the login box */
+    border-radius: 5px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3); /* Enhanced shadow for depth */
+}
+
+.form-control {
+    background-color: #333; /* Dark background for input fields */
+    color: #fff; /* White text for input fields */
+    border: 1px solid #555; /* Subtle border for inputs */
+}
+
+.form-group {
+    margin-bottom: 20px; /* Space between form groups */
+}
+
+.btn-custom {
+    background-color: #495057; /* Gray-600 for button */
+    color: white;
+    border: none;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.5); /* Shadow for 3D effect */
+}
+
+.btn-custom:hover {
+    background-color: #343a40; /* Darker gray on hover */
+}
+
+.back-link {
+    color: #ccc; /* Light gray for back link */
+    text-decoration: none;
+    text-align: center; /* Centers the text */
+    display: block; /* Makes the link take the full width of its container */
+    margin-top: 15px; /* Space above the back link */
+}
+
+.back-link:hover {
+    color: #fff; /* White on hover */
+    text-decoration: underline; /* Adds visual cue on hover */
+}
+
+.container h2 {
+    color: #ffcc00; /* Bright yellow for headings */
+    margin-bottom: 30px; /* Space below the heading */
+}
     </style>
 </head>
 <body>
@@ -52,26 +76,24 @@
         <div class="row">
             <div class="col-md-6 offset-md-3">
                 <h2 class="mb-4 text-center">Teacher Login</h2>
-
-        <form method="post" class="needs-validation" novalidate>
-            {% csrf_token %}
-            <div class="form-group">
-                {{ form.username.label_tag }}
-                {{ form.username|add_class:"form-control" }}
-                {{ form.username.errors }}
+                <form method="post" class="needs-validation" novalidate>
+                    {% csrf_token %}
+                    <div class="form-group">
+                        {{ form.username.label_tag }}
+                        {{ form.username|add_class:"form-control" }}
+                        {{ form.username.errors }}
+                    </div>
+                    <div class="form-group">
+                        {{ form.password.label_tag }}
+                        {{ form.password|add_class:"form-control" }}
+                        {{ form.password.errors }}
+                    </div>
+                    <button type="submit" class="btn btn-custom btn-block">Login</button>
+                </form>
+                <a href="{% url 'main' %}" class="back-link">Go back</a>
             </div>
-            <div class="form-group">
-                {{ form.password.label_tag }}
-                {{ form.password|add_class:"form-control" }}
-                {{ form.password.errors }}
-            </div>
-            <button type="submit" class="btn btn-custom">Login</button>
-        </form>
-        <a href="{% url 'main' %}" class="back-link">Go back to main</a>
+        </div>
     </div>
-
-    <!-- Optional JavaScript -->
-    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.2/dist/umd/popper.min.js"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>

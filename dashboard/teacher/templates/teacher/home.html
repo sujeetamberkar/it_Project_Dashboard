@@ -1,5 +1,4 @@
 {% load static %}
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -9,40 +8,61 @@
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
     <style>
-        body {
-
-background-color: #f8f9fa; /* Bootstrap's gray-100 for a light background */
+body {
+    background-color: #333; /* Dark gray background for the whole page */
+    color: #fff; /* White text color for contrast */
+    font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif; /* Modern font */
 }
+
 .container {
-    display: flex; /* Enables Flexbox */
-    flex-direction: column; /* Stacks items vertically */
-    justify-content: center; /* Centers content horizontally */
-    align-items: center; /* Centers content vertically */
-    min-height: 100vh; /* Minimum height of 100% of the viewport height */
-    padding: 0; /* No padding */
-    background-color: #fff; /* White background */
-
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    padding: 0;
+    background-color: #424242; /* Darker gray for the container */
 }
+
 .d-grid {
-    display: flex; /* Enables Flexbox */
-    flex-direction: row; /* Lines items up in a row */
-    flex-wrap: wrap; /* Allows items to wrap onto multiple lines */
-    justify-content: center; /* Centers buttons horizontally */
-    gap: 10px; /* Space between buttons */
-}
-.btn-custom {
-    background-color: #495057; /* Bootstrap's gray-600 */
-    color: white;
-    flex: 1; /* Each button will grow equally to fill the space */
-    min-width: 100px; /* Minimum width for buttons, adjust as needed */
-}
-.back-link {
-    width: 100%; /* Makes the back link take the full width */
-    text-align: center;
-    margin-top: 20px; /* Space above the back link */
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 10px; /* Maintains space between buttons */
 }
 
-</style>
+.btn-custom {
+    background-color: #495057; /* Dark gray for buttons */
+    color: white;
+    flex: 1; /* Allows button to fill the space appropriately */
+    min-width: 100px;
+    border: none; /* Removes border */
+    margin: 10px; /* Provides margin around buttons */
+}
+
+.btn-custom:hover {
+    background-color: #343a40; /* Slightly darker gray on hover */
+}
+
+.back-link {
+    color: #ccc; /* Light gray for back link */
+    text-decoration: none;
+    margin-top: 20px; /* Space above the back link */
+    width: 100%;
+    text-align: center;
+}
+
+.back-link:hover {
+    color: #fff; /* White on hover */
+    text-decoration: underline;
+}
+
+.welcome-heading {
+    color: #ffcc00; /* Bright yellow for the welcome heading */
+    margin-bottom: 30px;
+}
+    </style>
 </head>
 <body>
     <div class="container home-container">
@@ -58,7 +78,6 @@ background-color: #f8f9fa; /* Bootstrap's gray-100 for a light background */
             <h1 class="welcome-heading">Welcome, Guest!</h1>
         {% endif %}
     </div>
-
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>

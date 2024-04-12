@@ -7,45 +7,71 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Student Login</title>
+    <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
     <style>
-        body {
-            background-color: #f8f9fa; /* White background */
-        }
-        .container {
-            display: flex; /* Enables Flexbox */
-            justify-content: center; /* Centers content horizontally */
-            align-items: center; /* Centers content vertically */
-            min-height: 100vh; /* Minimum height of 100% of the viewport height */
-            padding: 0; /* No padding */
-        }
-        .login-container {
-            padding: 20px;
-            background-color: #fff; /* Bootstrap's gray-100 */
-            border-radius: 5px;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
-        }
-        .form-control {
-            margin-bottom: 10px; /* Space below form fields */
-        }
-        .form-group {
-            margin-bottom: 20px; /* More space between form groups */
-        }
-        .btn-custom {
-            background-color: #495057; /* Bootstrap's gray-600 */
-            color: white;
-            margin-top: 10px; /* Space above the button */
-        }
-        .btn-custom:hover {
-            background-color: #343a40; /* Bootstrap's gray-800 for a slight hover effect */
-        }
-        .back-link {
-            display: block;
-            text-align: center;
-            margin-top: 15px; /* Space above the back link */
-        }
+body {
+    background-color: #333; /* Dark gray background for the whole page */
+    color: #fff; /* White text color for contrast */
+    font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif; /* Modern font */
+}
+
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh; /* Full viewport height */
+    padding: 0;
+}
+
+.login-container {
+    padding: 20px;
+    background-color: #424242; /* Darker gray for the login box */
+    border-radius: 5px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3); /* Enhanced shadow for depth */
+}
+
+.form-control {
+    background-color: #333; /* Dark background for input fields */
+    color: #fff; /* White text for input fields */
+    border: 1px solid #555; /* Subtle border for inputs */
+}
+
+.form-group {
+    margin-bottom: 20px; /* Space between form groups */
+}
+
+.btn-custom {
+    background-color: #495057; /* Gray-600 for button */
+    color: white;
+    border: none;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.5); /* Shadow for 3D effect */
+}
+
+.btn-custom:hover {
+    background-color: #343a40; /* Darker gray on hover */
+}
+
+.back-link {
+    display: block; /* Ensures it takes the full width of its container */
+    color: #ccc; /* Light gray for visibility */
+    text-decoration: none; /* Removes underline until hover */
+    text-align: center; /* Centers the text within the link */
+    padding: 10px 0; /* Adds vertical padding for better touch area and visibility */
+    margin-top: 15px; /* Ensures there's space between the link and other elements above */
+    width: 100%; /* Ensures the link extends full width of its parent container */
+}
+.back-link:hover {
+    color: #fff; /* White on hover */
+    text-decoration: underline;
+}
+
+.container h2{
+    color: #ffcc00;
+    margin-bottom: 30px;
+}
     </style>
-    </head>
+</head>
 <body>
     <div class="container login-container">
         <div class="row">
@@ -65,11 +91,10 @@
                     </div>
                     <button type="submit" class="btn btn-custom btn-block">Login</button>
                 </form>
-                <a href="{% url 'main' %}" class="back-link">Go back to main</a>
+                <a href="{% url 'main' %}" class="back-link">Go back</a>
             </div>
         </div>
     </div>
-
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.2/dist/umd/popper.min.js"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
