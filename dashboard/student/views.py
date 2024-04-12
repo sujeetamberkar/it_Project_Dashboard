@@ -54,3 +54,23 @@ def view_marks(request):
         'marks_instance': marks_instance,
         'percentage': percentage,
     })
+
+@login_required
+def master_view(request):
+    notices = Notice.objects.all().order_by('-created_at')
+    materials = CourseMaterial.objects.all()
+    try:
+        marks_instance = StudentMarks.objects.get(student=request.user)
+        percentage = (marks_instance.marks_obtained / marks_instance.total_marks) * 100
+    except StudentMarks.DoesNotExist:
+        marks_instance = None
+        percentage = None
+
+    context = {
+        'user': request.user,
+        'notices': notices,
+        'materials': materials,
+        'marks_instance': marks_instance,
+        'percentage': percentage
+    }
+    return render(request, 'student/master.html', context)

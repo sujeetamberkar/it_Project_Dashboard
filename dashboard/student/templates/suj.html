@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Flex Layout</title>
+    <style>
+         html, body {
+            height: 100%; /* Full height */
+            margin: 0; /* Reset margin */
+        }
+        .main_container{
+            height: 100%;
+            width: 100%;
+            display: flex;
+            flex-direction: row;
+        }
+        .sub_container{
+            display: flex;
+            flex-direction: column;
+            height: 100%;
+            width: 50%;
+        }
+      
+     
+        .Quadrant_One
+        {
+            height: 10%;
+            width: 100%;
+            background-color: violet;
+        }
+        .Quadrant_Three{
+            height: 90%;
+            width: 100%;
+            background-color: gold;
+        }
+        .Quadrant_Two
+        {
+            height: 50%;
+            width: 100%;
+            background-color: firebrick;
+        }
+        .Quadrant_Four{
+            height: 50%;
+            width: 100%;
+            background-color: salmon;
+        }
+    </style>
+  </head>
+  <body>
+    <div class="main_container">
+        <div class="sub_container Left_Sub">
+           <div class="Quadrant_One">
+
+           </div>
+           <div class="Quadrant_Three">
+            
+           </div>
+        </div>
+
+        <div class="sub_container Right_Sub">
+            <div class="Quadrant_Two">
+
+            </div>
+            <div class="Quadrant_Four">
+             
+            </div>
+
+        </div>
+    </div>
+  </body>
+</html>

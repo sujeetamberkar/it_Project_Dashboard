@@ -1,0 +1,92 @@
+{% load static %}
+{% load youtube_filters %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Student Dashboard</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <style>
+        html, body {
+            height: 100%; /* Full height */
+            margin: 0; /* Reset margin */
+        }
+        .main_container {
+            height: 100%;
+            width: 100%;
+            display: flex;
+            flex-direction: row;
+        }
+        .sub_container {
+            display: flex;
+            flex-direction: column;
+            height: 100%;
+            width: 50%;
+        }
+        .Quadrant_One {
+            height: 10%;
+            width: 100%;
+        }
+        .Quadrant_Three {
+            height: 90%;
+            width: 100%;
+            overflow-y: auto;
+        }
+        .Quadrant_Two {
+            height: 50%;
+            width: 100%;
+            overflow-y: auto;
+        }
+        .Quadrant_Four {
+            height: 50%;
+            width: 100%;
+            overflow-y: auto;
+        }
+        .back-button {
+            margin-top: 20px; /* Space from the content above */
+            width: 100%; /* Full width of the container */
+        }
+    </style>
+</head>
+<body>
+    <div class="main_container">
+        <div class="sub_container Left_Sub">
+            <div class="Quadrant_One">
+                <p>Welcome, {{ user.username }}!</p>
+            </div>
+            <div class="Quadrant_Three">
+                {% for material in materials %}
+                    <div>
+                        <h4>{{ material.chapter_name }}</h4>
+                        <iframe src="https://www.youtube.com/embed/{{ material.video_url|youtube_id }}" frameborder="0" allowfullscreen></iframe>
+                        <a href="{{ material.pdf_file.url }}" download>Download PDF</a>
+                    </div>
+                {% endfor %}
+            </div>
+        </div>
+        <div class="sub_container Right_Sub">
+            <div class="Quadrant_Two">
+                {% for notice in notices %}
+                    <div>
+                        <p>{{ notice.created_at|date:"Y-m-d H:i" }} - {{ notice.content }}</p>
+                    </div>
+                {% endfor %}
+            </div>
+            <div class="Quadrant_Four">
+                {% if marks_instance %}
+                    <p>Marks Obtained: {{ marks_instance.marks_obtained }}</p>
+                    <p>Total Marks: {{ marks_instance.total_marks }}</p>
+                    <p>Percentage: {{ percentage|floatformat:2 }}%</p>
+                {% else %}
+                    <p>No marks recorded.</p>
+                {% endif %}
+                <!-- Go Back Button -->
+                <a href="/" class="btn btn-secondary back-button">Go Back</a>
+            </div>
+        </div>
+    </div>
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.2/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>
