@@ -8,10 +8,66 @@
     <title>Enter Marks</title>
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <style>
+body {
+    background-color: #333; /* Dark gray background for the whole page */
+    color: #fff; /* White text for contrast */
+    font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif; /* Modern font */
+}
+
+.container {
+    background-color: #424242; /* Darker gray for the container */
+    padding: 20px;
+    border-radius: 5px;
+    margin-top: 5vh; /* Adjusts vertical spacing */
+}
+
+table {
+    color: #fff; /* White text for table */
+}
+
+.table thead th {
+    background-color: #495057; /* Dark background for table header */
+}
+
+.table tbody td {
+    background-color: #333; /* Darker background for table rows */
+    border-top: none; /* Removes default top border */
+    color: white;
+}
+
+.form-control {
+    background-color: #555; /* Dark background for input fields */
+    color: #fff; /* White text for input fields */
+    border: 1px solid #777; /* Adjusts border color for visibility */
+}
+
+.btn-secondary {
+    background-color: #495057; /* Bootstrap's gray-600 */
+    border: none;
+}
+
+.btn-secondary:hover {
+    background-color: #343a40; /* Darker shade on hover */
+}
+
+.btn {
+    margin-top: 20px; /* Provides spacing for buttons */
+}
+.welcome-heading {
+    color: #ffcc00; /* Bright yellow for the welcome heading */
+    margin-bottom: 30px;
+    font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif; /* Modern font */
+    font-size: x-large;
+}
+
+    </style>
 </head>
 <body>
     <div class="container mt-5">
+        <div class="welcome-heading">
         <h1 class="mb-4">Enter Marks</h1>
+        </div>
         <form method="post" class="needs-validation" novalidate>
             {% csrf_token %}
             <div class="table-responsive">
@@ -39,8 +95,8 @@
                 </table>
             </div>
             <button type="submit" class="btn btn-secondary">Update Marks</button>
+            <a href="{% url 'teacher_home' %}" class="btn btn-secondary mt-3">Go to Home</a>
         </form>
-        <a href="{% url 'teacher_home' %}" class="btn btn-secondary mt-3">Go to Home</a>
     </div>
 
     <!-- Optional JavaScript -->
